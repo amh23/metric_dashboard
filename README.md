@@ -155,19 +155,19 @@ You can access the sample application in the browser of host machine.
 
 ## Verify the monitoring installation
 
-![kubectl get all](~/answer-img/get-all.png)
+![kubectl get all](https://github.com/amh23/metric_dashboard/blob/main/answer-img/get-all.png)
 
-![kubectl get all -n monitoring](~/answer-img/get-all-monitoring.png)
+![kubectl get all -n monitoring](https://github.com/amh23/metric_dashboard/blob/main/answer-img/get-all-monitoring.png)
 
-![kubectl get all -n observability](~/answer-img/get-all-obserability.png)
+![kubectl get all -n observability](https://github.com/amh23/metric_dashboard/blob/main/answer-img/get-all-obserability.png)
 
 ## Setup the Jaeger and Prometheus source
-![Grafana Login](~/answer-img/grafana-login.png)
+![Grafana Login](https://github.com/amh23/metric_dashboard/blob/main/answer-img/grafana-login.png)
 
-![Datasource](~/answer-img/datasource.png)
+![Datasource](https://github.com/amh23/metric_dashboard/blob/main/answer-img/datasource.png)
 
 ## Create a Basic Dashboard
-![Basic Dashboard](~/answer-img/basic-dashboard.png)
+![Basic Dashboard](https://github.com/amh23/metric_dashboard/blob/main/answer-img/basic-dashboard.png)
 
 ## Describe SLO/SLI
 Describe, in your own words, what the SLIs are, based on an SLO of *monthly uptime* and *request response time*.
@@ -186,11 +186,11 @@ It is important to know we have to measure certain metrics for our customer beca
 
 ## Create a Dashboard to measure our SLIs
 
-![Panels](~/answer-img/panels.png)
+![Panels](https://github.com/amh23/metric_dashboard/blob/main/answer-img/panels.png)
 
 ## Tracing our Flask App
 
-![Jaeger](~/answer-img/jaeger.png)
+![Jaeger](https://github.com/amh23/metric_dashboard/blob/main/answer-img/jaeger.png)
 
  
 ## Report Error
