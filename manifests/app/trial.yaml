@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: trial-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: trial
+      release: prometheus
+  template:
+    metadata:
+      labels:
+        app: trial
+        release: prometheus
+    spec:
+      containers:
+      - name: trial
+        image: amh23/trial:latest
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: trial-service
+  labels:
+    app: trial
+    release: prometheus
+spec:
+  selector:
+    app: trial
+    release: prometheus
+  ports:
+    - port: 8082
+      targetPort: 8080
+  type: LoadBalancer
