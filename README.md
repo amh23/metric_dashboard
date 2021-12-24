@@ -225,6 +225,8 @@ Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately meas
 
 Final Dashboard
 
+![Final Dashboard](https://github.com/amh23/metric_dashboard/blob/main/answer-img/final-dashboard.png)
+
 Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.
 
 1. Application uptime should be watched whether the app in the cluster running proper or not.
