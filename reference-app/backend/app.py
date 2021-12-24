@@ -36,7 +36,7 @@ metrics = GunicornInternalPrometheusMetrics(app)
 CORS(app)
 
 jaeger_tracer = config_tracer()
-tracing = FlaskTracing(jaeger_tracer, True, app)
+tracing = FlaskTracing(jaeger_tracer, False, app)
 
 app.config["MONGO_DBNAME"] = "example-mongodb"
 app.config[

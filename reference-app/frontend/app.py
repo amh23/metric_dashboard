@@ -15,7 +15,7 @@ config = Config(
                         'reporter_batch_size': 1,}, 
                         service_name="service")
 jaeger_tracer = config.initialize_tracer()
-tracing = FlaskTracing(jaeger_tracer, True, app)
+tracing = FlaskTracing(jaeger_tracer, False, app)
 #jaeger
 
 

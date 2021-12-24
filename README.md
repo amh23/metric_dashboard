@@ -210,5 +210,27 @@ Severity: High
 
 Description: Data can not be stored.
 
+## Creating SLIs and SLOs
+
+We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
+
+Building KPIs for our plan
+
+Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
+
+1. Uptime of application
+2. Resources usage of application such as CPU, Memory and Disk
+3. Request and response of the application 
+4. Failure rate of the requests 
+
+Final Dashboard
+
+Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.
+
+1. Application uptime should be watched whether the app in the cluster running proper or not.
+2. Some container or service may use resource such as memory or cpu so that resource usage need to watch.
+3. It is important to keep an eye on request and response of the application
+4. Failure rate is needed to calculate the buffer for the gap between SLO and SLI.
+
 
   

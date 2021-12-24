@@ -42,8 +42,8 @@ def init_tracer(service):
     return config.initialize_tracer()
 
 
-tracer = init_tracer("trial")
-flask_tracer = FlaskTracing(tracer, True, app)
+tracer = init_tracer("trial_service")
+flask_tracer = FlaskTracing(tracer, False, app)
 
 
 @app.route("/")
