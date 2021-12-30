@@ -22,6 +22,23 @@ spec:
         ports:
         - containerPort: 8081
 ---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend-service
+  labels:
+    app: backend
+    release: prometheus
+spec:
+  selector:
+    app: backend
+    release: prometheus
+  ports:
+    - name: backend
+      port: 8081
+      targetPort: 8080
+  type: LoadBalancer
+---
 apiVersion: monitoring.coreos.com/v1
 kind: ServiceMonitor
 metadata:

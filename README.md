@@ -194,7 +194,7 @@ It is important to know we have to measure certain metrics for our customer beca
 
  
 ## Report Error
-*TODO:* Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue also include a screenshot of the tracer span to demonstrate how we can user a tracer to locate errors easily.
+Using the template below, write a trouble ticket for the developers, to explain the errors that you are seeing (400, 500, latency) and to let them know the file that is causing the issue also include a screenshot of the tracer span to demonstrate how we can user a tracer to locate errors easily.
 
 TROUBLE TICKET
 
@@ -222,6 +222,7 @@ Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately meas
 2. Resources usage of application such as CPU, Memory and Disk
 3. Request and response of the application 
 4. Failure rate of the requests 
+5. Distributed tracing
 
 Final Dashboard
 
@@ -229,10 +230,19 @@ Final Dashboard
 
 Create a Dashboard containing graphs that capture all the metrics of your KPIs and adequately representing your SLIs and SLOs. Include a screenshot of the dashboard here, and write a text description of what graphs are represented in the dashboard.
 
-1. Application uptime should be watched whether the app in the cluster running proper or not.
-2. Some container or service may use resource such as memory or cpu so that resource usage need to watch.
-3. It is important to keep an eye on request and response of the application
-4. Failure rate is needed to calculate the buffer for the gap between SLO and SLI.
+
+1. Uptime of  application
+  * Frontend and Backend uptime to watch the status of applications
+2. Resources Usage of application
+  * CPU Usage
+  * Memory Usage
+3. Request and Reponse of application
+  * Application request and response time
+  * 2.* status of responses
+4. Failure Rate
+  * 4.* 0r 5.* status of response
+5. Distributed Tracing
+  * jaeger tracing total for frontend and backend
 
 
   
