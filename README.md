@@ -145,6 +145,8 @@ EOF
 ```
 You can access Jaeger in browser of host machine using `kubectl port-forward -n observability $(kubectl get pods -n observability -l=app="jaeger" -o name) --address 0.0.0.0 16686` command.
 
+![Jaeger In Grafana](https://github.com/amh23/metric_dashboard/blob/main/answer-img/jaeger-in-dashboard.png)
+
 ## Exposing the application
 
 ```
@@ -190,7 +192,7 @@ It is important to know we have to measure certain metrics for our customer beca
 
 ## Tracing our Flask App
 
-![Jaeger](https://github.com/amh23/metric_dashboard/blob/main/answer-img/jaeger.png)
+![Jaeger](https://github.com/amh23/metric_dashboard/blob/main/answer-img/jaeger-backend-service.png)
 
  
 ## Report Error
@@ -198,32 +200,61 @@ Using the template below, write a trouble ticket for the developers, to explain 
 
 TROUBLE TICKET
 
-Name: Mongodb setup missing
+Name: Error on trial/app/app.py
 
-Date: 20/12/2021
+Date: 01/01/2022
 
-Subject: Database is not set up yet
+Subject:  Response 500 code while accessing trial-service
 
-Affected Area: Data Storage
+Affected Area: Home page of trial-service route
 
 Severity: High
 
-Description: Data can not be stored.
+Description: We can not access to trial-service home page and in jaeger, ```trial_service:get-python-jobs``` trace message is shown.
+
+![Jaeger Trial Service](https://github.com/amh23/metric_dashboard/blob/main/answer-img/jaeger-trial-service.png)
+
+![Jaeger Error](https://github.com/amh23/metric_dashboard/blob/main/answer-img/jaeger-trial-error-span.png)
+
 
 ## Creating SLIs and SLOs
 
 We want to create an SLO guaranteeing that our application has a 99.95% uptime per month. Name four SLIs that you would use to measure the success of this SLO.
+
+1. Uptime of application
+2. Resources usage of application such as CPU, Memory and Disk
+3. Request and Response of Application
+4. Latency
 
 Building KPIs for our plan
 
 Now that we have our SLIs and SLOs, create a list of 2-3 KPIs to accurately measure these metrics as well as a description of why those KPIs were chosen. We will make a dashboard for this, but first write them down here.
 
 1. Uptime of application
-2. Resources usage of application such as CPU, Memory and Disk
-3. Request and response of the application 
-4. Failure rate of the requests 
-5. Distributed tracing
+  
+  * Frontend application uptime
+  * Backend application uptime
+  * These application uptime should be > 99.95 %  per month to meet the predefined SLOs.
 
+2. Resource Usage
+
+  * CPU usage
+  * Memory usage
+  * Disk usage
+  * These usages should be logged and measured because the applications bottle neck can not happen.
+
+3. Request and Response of Application
+
+  * Successful responses such as 2.* status code 
+  * Failure responses such as 4.*, 5.* status code 
+  * These KPIs should be measured for the traffic and failure rate of the application.
+
+4. Latency
+
+  * Average response time
+  * Total requests per minute
+  * These KPIs should be measured to meet the latency of application for the predefined SLOs.
+  
 Final Dashboard
 
 ![Final Dashboard](https://github.com/amh23/metric_dashboard/blob/main/answer-img/final-dashboard.png)
